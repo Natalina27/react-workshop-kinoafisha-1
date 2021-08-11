@@ -1,5 +1,5 @@
 // Core
-import { useState, useEffect } from 'react';
+import { useQuery } from 'react-query';
 
 // Instruments
 import { api } from '../api';
@@ -9,17 +9,10 @@ import { filterStore } from '../lib/filterStore';
 import { IMovie } from '../types';
 
 export const useMovies = () => {
-    const [ movies, setMovies ] = useState<IMovie[] | null>(null);
+    const query = useQuery<IMovie[]>(
+        [ 'moves', filterStore.filter ],
+        () => api.getMovies(filterStore.filter),
+    );
 
-    useEffect(() => {
-        const getMoviesByFilter = async () => {
-            const newMovies = await api.getMovies(filterStore.filter);
-
-            setMovies(newMovies);
-        };
-
-        getMoviesByFilter();
-    }, [ filterStore.filter ]);
-
-    return { data: movies };
+    return query;
 };
