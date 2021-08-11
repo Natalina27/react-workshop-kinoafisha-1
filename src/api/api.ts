@@ -12,7 +12,7 @@ export const api = {
         return movies;
     },
 
-    async getMovieById(id) {
+    async getMovieById(id: number) {
         const { data: movie } = await axios.get(`${API_URL}/movies/${id}`);
 
         return movie;
