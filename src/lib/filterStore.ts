@@ -1,14 +1,17 @@
 // Core
 import { makeAutoObservable } from 'mobx';
 
+// Types
+import { Filter } from '../types/filter';
+
 class FilterStore {
-    filter = 'upcoming';
+    filter: Filter = 'upcoming';
 
     constructor() {
         makeAutoObservable(this);
     }
 
-    setFilter(nextFilter) {
+    setFilter(nextFilter: Filter) {
         this.filter = nextFilter;
     }
 }

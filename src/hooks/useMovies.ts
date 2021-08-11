@@ -5,8 +5,11 @@ import { useState, useEffect } from 'react';
 import { api } from '../api';
 import { filterStore } from '../lib/filterStore';
 
+// Types
+import { IMovie } from '../types';
+
 export const useMovies = () => {
-    const [ movies, setMovies ] = useState(null);
+    const [ movies, setMovies ] = useState<IMovie[] | null>(null);
 
     useEffect(() => {
         const getMoviesByFilter = async () => {

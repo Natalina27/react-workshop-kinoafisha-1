@@ -4,8 +4,11 @@ import { useState, useEffect } from 'react';
 // Instruments
 import { api } from '../api';
 
-export const useMovieById = (id) => {
-    const [ movie, setMovie ] = useState(null);
+// Types
+import { IMovie } from '../types/movie';
+
+export const useMovieById = (id: number) => {
+    const [ movie, setMovie ] = useState<IMovie | null>(null);
 
     useEffect(() => {
         const getMovieById = async () => {

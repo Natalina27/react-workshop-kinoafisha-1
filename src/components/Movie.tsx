@@ -1,7 +1,13 @@
 // Core
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-export const Movie = ({ movie }) => {
+// Types
+import { IMovie } from '../types';
+
+export const Movie: FC<IPropTypes> = (props) => {
+    const { movie } = props;
+
     return (
         <Link to = { `/movies/${ movie.id }` }>
             <article>
@@ -18,3 +24,7 @@ export const Movie = ({ movie }) => {
         </Link>
     );
 };
+
+interface IPropTypes {
+    movie: IMovie
+}
