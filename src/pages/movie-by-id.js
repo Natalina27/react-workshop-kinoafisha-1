@@ -1,10 +1,10 @@
-/* Core */
+// Core
 import { useParams, Link } from 'react-router-dom';
 
-/* Components */
+// Components
 import { Logo } from '../theme/icons';
 
-/* Instruments */
+// Instruments
 import { useMovieById } from '../hooks';
 
 export const MovieById = () => {

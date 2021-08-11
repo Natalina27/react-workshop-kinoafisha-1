@@ -1,7 +1,7 @@
-/* Core */
+// Core
 import { useState, useEffect } from 'react';
 
-/* Instruments */
+// Instruments
 import { api } from '../api';
 
 export const useMovieById = (id) => {

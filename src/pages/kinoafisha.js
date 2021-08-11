@@ -1,11 +1,11 @@
-/* Core */
+// Core
 import { observer } from 'mobx-react-lite';
 
-/* Components */
+// Components
 import { Movie } from '../components';
 import { Logo } from '../theme/icons';
 
-/* Instruments */
+// Instruments
 import { useMovies } from '../hooks';
 import { filterStore } from '../lib/filterStore';
 

@@ -1,16 +1,12 @@
-/* Core */
+// Core
 import { render } from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { QueryClientProvider, QueryClient } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools';
 
-/* Components */
+// Components
 import { App } from './App';
 
-/* Instruments */
+// Instruments
 import './theme/init.scss';
-
-const client = new QueryClient();
 
 render(
     <Router>
